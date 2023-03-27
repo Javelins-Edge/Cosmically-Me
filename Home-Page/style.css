@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(istockphoto-1211526766-612x612.jpg);
+    background-attachment: fixed; 
+  }
+  
+  :root {  
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+  }
+  
+  @keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
+  
+    
+  h1 {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 100px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 > .magic {
+    display: inline-block;
+    position: relative;
+  }
+
+  h1 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+      var(--violet),
+      var(--pink),
+      var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+
+  p{
+    color:white;
+  }
+  
+  
+
+  .wrapper {
+    width: 105rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: -1rem -1rem 2rem #444, 1rem 1rem 2rem #444,
+      inset 10rem 0 5rem #000, inset -1rem 0 2rem #c9c3c3;
+  }
+  
+  .earth {
+    width: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    animation: earthAnim 300s infinite linear;
+    background-image: url(image.png);
+  }
+  
+  @keyframes earthAnim {
+    0% {
+      background-position: 0rem center;
+    }
+  
+    100% {
+      background-position: 75rem center;
+    }
+  }
+
+  
+  .container {
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50rem;
+    height: 30rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    z-index: 5;
+    overflow: hidden;
+  }
+
+  .container2 {
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90rem;
+    height: 50rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    z-index: 5;
+    overflow: hidden;
+  }
+  
+
+
+.st {
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
+    animation: animate 3s linear infinite;
+}
+.st::before{
+    content:'';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg,#fff,transparent);
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+}
+.st:nth-child(1){
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+.st:nth-child(2){
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+.st:nth-child(3){
+    top: 80;
+    right: 0px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+.st:nth-child(4){
+    top: 0;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+}
+.st:nth-child(5){
+    top: 0;
+    right: 400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+}
+.st:nth-child(6){
+    top: 0;
+    right: 600px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+.st:nth-child(7){
+    top: 300px;
+    right: 0px;
+    left: initial;
+    animation-delay: 1.2s;
+    animation-duration: 1.75s;
+}
+.st:nth-child(8){
+    top: 0px;
+    right: 700px;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 1.25s;
+}
+.st:nth-child(9){
+    top: 0px;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.75s;
+    animation-duration: 2.25s;
+}
+.st:nth-child(10){
+    top: 500px;
+    right: -30px;
+    left: initial;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+
+iframe {
+    margin-left:3rem;
+    margin-right:auto;
+    margin-top: 40%;
+    width:50%;
+    width:95%;
+    height:840px;
+}
+  
