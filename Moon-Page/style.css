@@ -2,8 +2,19 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+    /* font-family: "Montserrat", sans-serif; */
   }
+
+  @font-face {
+    font-family: 'SpaceX';
+    src: url('../font/fonts/SpaceX.eot');
+    src: url('../font/fonts/SpaceX.eot?#iefix') format('embedded-opentype'),
+         url('../font/fonts/SpaceX.woff2') format('woff2'),
+         url('../font/fonts/SpaceX.woff') format('woff'),
+         url('../font/fonts/SpaceX.ttf')  format('truetype'),
+         url('../font/fonts/SpaceX.svg#SpaceX') format('svg');
+}
+
   body {
     background-color: #000000;
     height: 100%;
@@ -11,6 +22,7 @@
     /* background: radial-gradient(ellipse at bottom, #131d27 0%,#000000 100%); */
   }
   .container {
+    font-family: "Montserrat", sans-serif;
     height: 31.25em;
     width: 31.25em;
     position: absolute;
@@ -80,7 +92,7 @@
     right: 0;
     color: #fff;
     text-align: center;
-    font-family: Lato;
+    /* font-family: Lato; */
     font-weight: 300;
     font-size: 50px;
     letter-spacing: 10px;
@@ -101,7 +113,7 @@
   right: 0;
   color: #fff;
   text-align: center;
-  font-family: Lato;
+  /* font-family: Lato; */
   font-weight: 300;
   font-size: 50px;
   letter-spacing: 10px;

@@ -118,10 +118,9 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
         dec = arr[2].split("|").join(" ");
         let p2s = `Your birth star is ${star}, in the constellation ${constellation}. The light from it was created the day you were born, and has now arrived after traveling ${age} light years.`;
         document.querySelector("#p2sID").innerHTML = p2s;
-        moonCall(bday);
         let oId = String(idHash[constellation]).toLowerCase();
-        console.log(oId);
         StarChart(oId);
+        moonCall(bday);
       },
       "jsonp"
     );
