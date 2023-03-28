@@ -124,6 +124,7 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
       },
       "jsonp"
     );
+    document.querySelector("#overflow").style.overflow = "visible";
   }
 });
 

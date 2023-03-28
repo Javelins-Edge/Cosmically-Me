@@ -8,3 +8,10 @@
          url('../font/fonts/SpaceX.svg#SpaceX') format('svg');
 }
 
+body {
+    overflow: hidden;
+}
+
+iframe {
+    margin-top: 100vh;
+}

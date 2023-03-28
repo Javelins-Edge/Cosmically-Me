@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* font-family: "Montserrat", sans-serif; */
   }
 
   @font-face {
@@ -18,8 +17,6 @@
   body {
     background-color: #000000;
     height: 100%;
-    /* overflow: true; */
-    /* background: radial-gradient(ellipse at bottom, #131d27 0%,#000000 100%); */
   }
   .container {
     font-family: "Montserrat", sans-serif;
@@ -693,42 +690,19 @@
     }
 }
 
-/* @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
-.holder {
-  position: absolute;
-  background-color: #rgba(0,0,0,0);
-  left: 0%;
-  top: 0%;
-  width: 100%;
-  height: 100%;}
-  
-.new-year {
-  font-family: 'Major Mono Display', monospace;
-  color: #333333;
-  font-size: 20px;
+#image-track {
+  display: flex;
+  gap: 4vmin;
   position: absolute;
   left: 50%;
-  top: 50%;
-  width: 100%;
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
+  top: 150%;
+  transform: translate(0%, -50%); 
+  user-select: none; /* -- Prevent image highlighting -- */
 }
-.year {
-  position: relative;
-  left: 50%;
-  display: table;
-  font-size: 6em;
-  transform: translateX(-50%);
-}
-.year2 {
-  transform: translateX(-50%) rotateX(180deg);
-  opacity: 0.2;
-}
-.digit {
-  display: inline-block;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  opacity: 0;
-}  */
 
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
