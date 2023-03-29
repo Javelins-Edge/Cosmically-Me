@@ -20,12 +20,13 @@
     background-image: url(istockphoto-1211526766-612x612.jpg);
     background-attachment: fixed; 
     overflow: hidden;
+    font-family: 'SpaceX';
   }
   
   :root {  
-    --orange: rgb(255, 166, 0);
-    --yellow: rgb(241, 255, 48);
-    --red: rgb(254, 58, 58);
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
   }
   
   @keyframes background-pan {
@@ -38,14 +39,29 @@
     }
   }
   
-    
+
+@keyframes travel {
+  from {
+  top: 40%;
+  }
+  to {
+  top: 10%;
+  
+}
+}
+
+
   h1 {
+    position: relative;
+    top: 40%;
     color: white;
     font-size: 100px;
     font-weight: 400;
     margin: 0px;
     padding: 20px;
     text-align: center;
+    animation: travel 1.5s linear 0.5s 1 normal forwards;
+    animation-timing-function: ease-in-out;
   }
   
   h1 > .magic {
@@ -57,11 +73,71 @@
     animation: background-pan 3s linear infinite;
     background: linear-gradient(
       to right,
-      var(--red),
-      var(--orange),
-      var(--yellow),
-      var(--orange),
-      var(--red)
+      var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+
+  h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    top: 55%;
+  }
+  
+  h2 > .magic {
+    display: inline-block;
+    position: relative;
+  }
+
+  h2 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+
+
+  h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  h3 > .magic {
+    display: inline-block;
+    position: relative;
+  }
+
+  h3 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
     );
     background-size: 200%;
     -webkit-background-clip: text;
@@ -116,7 +192,18 @@
   }
 
   
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    
+    to {
+      opacity: 1;
+    }
+  }
+
   .container {
+    opacity: 0;
     margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
@@ -128,6 +215,7 @@
     backdrop-filter: blur(5px);
     z-index: 5;
     overflow: hidden;
+    animation: fade 1s linear 2s 1 normal forwards;
   }
 
   .container2 {
@@ -142,6 +230,16 @@
     backdrop-filter: blur(5px);
     z-index: 5;
     overflow: hidden;
+    position: relative;
+  }
+
+  .container2 span {
+    display: inline-flex;
+    position: absolute;
+    bottom: 5%;
+    right: 35%;
+    left: 35%;
+    justify-self: center;
   }
   
 
@@ -262,4 +360,3 @@ iframe {
     width:95%;
     height:840px;
 }
-  

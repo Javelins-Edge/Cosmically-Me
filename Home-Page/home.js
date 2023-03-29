@@ -1,13 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // document.getElementById("head").scrollIntoView();
   if (localStorage["bday"] !== undefined) {
     document.querySelector("#overflow").style.overflow = "visible";
     document.querySelector("#p1sID").innerText = localStorage["p1s"];
     document.querySelector("#p2sID").innerText = localStorage["p2s"];
     document.getElementById("cons").src = localStorage["cons"];
+    document.querySelector("#data").innerText = localStorage["data"];
+    document.querySelector("#sand").innerText = localStorage["finding"];
+    document.querySelector("#wiki").href = localStorage["wiki"];
   }
 });
 
-document.getElementById("refresh").addEventListener("click", () => {
+// window.onload = function () {
+//   document.getElementById("head").scrollIntoView();
+//   window.scrollTo(0, 0, "instant");
+// };
+
+document.getElementById("refresh").addEventListener("click", (e) => {
+  // document.getElementById("head").scrollIntoView();
+  e.preventDefault();
+  window.scrollTo(0, 0, "instant");
   localStorage.clear();
   location.reload();
 });
@@ -60,7 +72,6 @@ function moonCall(date) {
     .then((response) => response.json())
     .then((response) => {
       localStorage.setItem("moon", response.data.imageUrl);
-      //   document.getElementById("moon").src = response.data.imageUrl;
     })
     .catch((err) => console.error(err));
 }
@@ -95,6 +106,7 @@ function StarChart(id) {
 let age;
 let bday;
 let star;
+let starL;
 let constellation;
 let dyear;
 let asc;
@@ -102,29 +114,43 @@ let dec;
 
 document.querySelector("#bday-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  bday = e.target[0].value;
-  let name = e.target[1].value;
-  // console.log(name);
-  let pronouns = e.target[2].value;
-  // console.log(pronouns);
+  bday = e.target[2].value;
+  let name = e.target[0].value;
+  name = name.split(" ")[0];
+  let pronouns = e.target[1].value;
   localStorage.setItem("name", name);
   localStorage.setItem("pronouns", pronouns);
   console.log(bday);
   localStorage.setItem("bday", bday);
-  let p1s = `You were born on ${bday}`;
+  let days = bday.split("-");
+  days = days[1] + "/" + days[2] + "/" + days[0];
+  let p1s = `Wow, you were born on ${days}, congratulations!`;
   localStorage.setItem("p1s", p1s);
   document.querySelector("#p1sID").innerHTML = p1s;
   age = daysBetweenDates(bday, new Date()) / 365;
   localStorage.setItem("age", age);
   star = bdStar(age);
+  document.querySelector(
+    "#wiki"
+  ).href = `https://en.wikipedia.org/wiki/${star}`;
+  starL = disHash[dyear];
+  localStorage.setItem("starL", starL);
   star = disHash[dyear].split("_").join(" ");
   localStorage.setItem("star", star);
+  localStorage.setItem(
+    "wiki",
+    `https://en.wikipedia.org/wiki/${localStorage["starL"]}`
+  );
   dak();
   function dak() {
     let url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${disHash[dyear]}&formatversion=2&exsentences=10&exintro=1&explaintext=1&exsectionformat=plain`;
     loadJSON(
       url,
       (data) => {
+        localStorage.setItem("data", data.query.pages[0].extract);
+        document.querySelector(
+          "#bd"
+        ).innerText = `Here is some data from your Star's Wikipedia page.`;
         document.querySelector("#data").innerText = data.query.pages[0].extract;
       },
       "jsonp"
@@ -151,8 +177,10 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
         constellation = constellation.substring(0, constellation.length - 2);
         asc = arr[1].split("|").join(" ");
         dec = arr[2].split("|").join(" ");
-        let p2s = `Your birth star is ${star}, in the constellation ${constellation}. The light from it was created the day you were born, and has now arrived after traveling ${age} light years.`;
-        document.querySelector("#p2sID").innerText += p2s;
+        let p2s = `${name} your closest birth star is ${star}, in the constellation ${constellation}. The light from it was created around the day you were born, and has now arrived after traveling ${age.toFixed(
+          3
+        )} light years. How Exciting!`;
+        document.querySelector("#p2sID").innerText = p2s;
         localStorage.setItem("p2s", p2s);
         let oId = String(idHash[constellation]).toLowerCase();
         StarChart(oId);
@@ -160,6 +188,13 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
         localStorage.setItem("constellation", constellation);
         localStorage.setItem("asc", asc);
         localStorage.setItem("dec", dec);
+        document.querySelector(
+          "#sand"
+        ).innerText = `Use this 3-D model to try and find ${star} in the constellation ${constellation}!`;
+        localStorage.setItem(
+          "finding",
+          document.querySelector("#sand").innerText
+        );
       },
       "jsonp"
     );

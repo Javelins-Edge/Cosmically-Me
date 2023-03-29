@@ -11,45 +11,91 @@
     <link rel="stylesheet" href="./font/specimen_files/css/boxicons.min.css">
     <link rel="stylesheet" href="./font/specimen_files/css/style.css">
     <link rel="icon" href="./font/specimen_files/images/favicon.png">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"> -->
     <style>
         body {
             font-family: 'SpaceX';
         }
     </style>
     <link rel="stylesheet" href="Home-Page/style.css" />
-  </head>
+  </head id = "head">
   <body id="overflow" >
+
     <h1>
       <span class="magic">
-          <span class="magic-text">Cosmically Me</span>
+          <span class="magic-text">COSMICALLY ME</span>
       </span>
     </h1>
     <div class="wrapper">
       <div class="earth"></div>
     </div>
-
-    <div class="container">
-        <p background-color="white" text-align = "center">Input your birthday below!</p>
-        <form action="/action_page.php" id="bday-form">
-          <label for="birthday"color="white">Birthday:</label>
-          <input type="date" id="birthday" name="birthday" required>
-          <label for="fname">First name:</label> <input type="text" id="fname" name="fname" required>
+    <!-- <div class="container" visibility = "hidden">
+      <br>
+        <p background-color="white" style="text-align:center">Cosmically Me allows you to learn all about your birth star, a star who's light you see today was created the day you were born. Come and witness the moon your night of birth, your celestial timeline, your light clock, your unique cosmic journey, and for the intrepid few, an opportunity to find your star in a 3-D model of our galactic neighborhood.</p>
+        <br>
+        <p background-color="white" style="text-align:center">Input your information below to begin!</p>
+        <br>
+        <form action="/action_page.php" id="bday-form" style="display:flex;justify-content:center;">
+          <label for="fname">Name:</label> <input type="text" id="fname" name="fname" padding="10px"required>
+          <br>
           <label for="pronouns">Pronouns:</label>
           <select id="pronouns" name="pronouns" required>
+            <option value=""></option>
             <option value="he">he/him</option>
             <option value="she">she/her</option>
             <option value="they">they/them</option>
           </select>
+          <br>
+          <label for="birthday"color="white">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" required>
+          </form>
+          <br>
           <input type="submit">
         </form>
         <button id = "refresh">Is this not you?</button>
+    </div> -->
+    <div class="container" visibility = "hidden"><br>
+      <p background-color="white" style="text-align:center">Cosmically Me allows you to learn all about your birth star, a star who's light you see today was created the day you were born. Come and witness the moon your night of birth, your celestial timeline, your light clock, your unique cosmic journey, and for the intrepid few, an opportunity to find your star in a 3-D model of our galactic neighborhood.</p>
+        <br>
+        <h3>
+          <span class="magic">
+              <span class="magic-text">Input your information below to begin!</span>
+          </span>
+        </h3>
+        <!-- <p background-color="white" style="text-align:center">Input your information below to begin!</p> -->
+        <br>
+        <div>
+        <form action="/action_page.php" id="bday-form" >
+          <label for="fname"style="color:white">Name:</label> <input type="text" id="fname" name="fname" style="vertical-align:top;" required>
+          <label for="pronouns"style="color:white"> Pronouns:</label>
+          <select id="pronouns" name="pronouns" required>
+            <option value=""></option>
+            <option value="he">he/him</option>
+            <option value="she">she/her</option>
+            <option value="they">they/them</option>
+          </select>
+            <label for="birthday"style="color:white"> Birthday:</label>
+            <input type="date" id="birthday" name="birthday" style="vertical-align:top;" required>
+          <input type="submit" style="left:auto;right:auto;">
+        </form>
+      </div>
+        <button id = "refresh">Reset Data</button>
     </div>
 
     <div class="container2">
-        <p background-color="white" id = "p1sID">Bday: </p>
-        <p id = "data">Data: </p>
-        <p id = "p2sID">Info: </p>
-        <img width = "750px"src="" id = "cons">
+      <br>
+        <p background-color="white" id = "p1sID" style="text-align:center;padding:10px;">Please input your information above and wait for the server to respond. Thank you. </p>
+        <br>
+        <p id = "p2sID" style="text-align:center;padding:10px;"></p>
+        <br>
+        <p id = "bd" style="text-align:center;padding:10px;"></p>
+        <br>
+        <div>
+          <img width = "550px"src="" id = "cons" style="float:right;padding:15px;border-radius:80px;">
+        <p id = "data" style="text-align:center;padding:10px;"></p>
+      </div>
+      <br>
+      <span><a id="wiki"href="" style="text-align:right;" target="_blank">Click Here to Learn More!</a></span>
     </div>
 
     <section>
@@ -65,8 +111,14 @@
         <span class = 'st'></span>
         <span class = 'st'></span>
     </section>
-    <button onclick=" window.location.href= 'Moon-Page/moon.html';">Next Page</button>
+    <h2>
+      <span class="magic">
+        <span class="magic-text" id = "sand" style="top:200%;"></span>
+      </span>
+    </h2>
     <iframe src="https://charliehoey.com/threejs-demos/our-galactic-neighborhood.html" style="border:0px;"></iframe>
+    <button onclick=" window.location.href= 'Moon-Page/moon.html';">Next Page</button>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script> -->
     <script src="Home-Page/home.js" defer></script>
   </body>
 </html>

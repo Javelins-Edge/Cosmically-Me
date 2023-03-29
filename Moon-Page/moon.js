@@ -111,8 +111,9 @@ let Moon = {
     return { phase: b, name: Moon.phases[b] };
   },
 };
-
-document.getElementById("bday").innerHTML += localStorage["bday"];
+let formatted = localStorage["bday"].split("-");
+formatted = formatted[2] + "/" + formatted[1] + "/" + formatted[0];
+document.getElementById("bday").innerHTML += formatted;
 document.getElementById("moon").style["background-image"] =
   "url(" + localStorage["moon"] + ")";
 let spl = localStorage["bday"];
