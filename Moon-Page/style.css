@@ -40,8 +40,10 @@
   .letter-N {
     right: 0.2em;
   }
-    .moon { 
-    background-image: url(https://2229349915-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MKQ7_I-c79Ln1c6Chop%2F-MLMcIv7WeAS5ac0ZVnC%2F-MLMfuVXwb-nvqU5Gd3F%2Fmoon.285d.png?alt=media&token=93c058ab-4d2a-462e-9bf4-4647c532448a);
+    #moon { 
+    background-image: url(https://widgets.astronomyapi.com/moon-phase/generated/5a3ee706b8c607b58ab675ebe6935972b7dfdd4a341c677b307e478a18b63069.png);
+    background-size: 230%;
+    background-position: 50% 32%;
     height: 10em;
     width: 10em;
     border-radius: 50%;

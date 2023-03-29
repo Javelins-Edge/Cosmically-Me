@@ -13,6 +13,7 @@ function bdStar(a) {
   for (let year in disHash) {
     if (a <= Number(year)) {
       dyear = year;
+      localStorage.setItem("dyear", dyear);
       return disHash[year];
     }
   }
@@ -29,10 +30,10 @@ function moonCall(date) {
     body: JSON.stringify({
       style: {
         moonStyle: "default",
-        backgroundStyle: "stars",
+        backgroundStyle: "solid",
         backgroundColor: "#000000",
-        headingColor: "#ffffff",
-        textColor: "#ffffff",
+        headingColor: "#000000",
+        textColor: "#000000f",
       },
       observer: {
         latitude: 33.775867,
@@ -44,7 +45,8 @@ function moonCall(date) {
   })
     .then((response) => response.json())
     .then((response) => {
-      document.getElementById("moon").src = response.data.imageUrl;
+      // document.getElementById("moon").src = response.data.imageUrl;
+      localStorage.setItem("moon", response.data.imageUrl);
     })
     .catch((err) => console.error(err));
 }
@@ -75,15 +77,26 @@ function StarChart(id) {
     .catch((err) => console.error(err));
 }
 
+let age;
+let bday;
+let star;
+let constellation;
+let dyear;
+let asc;
+let dec;
+
 document.querySelector("#bday-form").addEventListener("submit", (e) => {
   e.preventDefault();
   bday = e.target[0].value;
   console.log(bday);
+  localStorage.setItem("bday", bday);
   let p1s = `You were born on ${bday}`;
   document.querySelector("#p1sID").innerHTML = p1s;
   age = daysBetweenDates(bday, new Date()) / 365;
+  localStorage.setItem("age", age);
   star = bdStar(age);
   star = disHash[dyear].split("_").join(" ");
+  localStorage.setItem("star", star);
   dak();
   function dak() {
     let url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${disHash[dyear]}&formatversion=2&exsentences=10&exintro=1&explaintext=1&exsectionformat=plain`;
@@ -121,20 +134,15 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
         let oId = String(idHash[constellation]).toLowerCase();
         StarChart(oId);
         moonCall(bday);
+        localStorage.setItem("constellation", constellation);
+        localStorage.setItem("asc", asc);
+        localStorage.setItem("dec", dec);
       },
       "jsonp"
     );
     document.querySelector("#overflow").style.overflow = "visible";
   }
 });
-
-let age;
-let bday;
-let star;
-let constellation;
-let dyear;
-let asc;
-let dec;
 
 let disHash = {
   0: "Sun",

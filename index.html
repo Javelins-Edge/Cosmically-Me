@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
     <link rel="stylesheet" href="Home-Page/style.css">
     <link rel="stylesheet" href="./font/specimen_files/css/boxicons.min.css">
     <link rel="stylesheet" href="./font/specimen_files/css/style.css">
@@ -16,7 +18,7 @@
     </style>
     <link rel="stylesheet" href="Home-Page/style.css" />
   </head>
-  <body>
+  <body id="overflow" >
     <h1>
       <span class="magic">
           <span class="magic-text">Cosmically Me</span>
@@ -27,17 +29,27 @@
     </div>
 
     <div class="container">
-        <p background-color="white">Cillum irure pariatur occaecat tempor nisi irure esse. Adipisicing pariatur laborum fugiat irure quis sunt adipisicing et eiusmod consectetur consectetur ea exercitation sit. Occaecat ullamco qui velit velit. Ut mollit mollit deserunt ipsum est duis reprehenderit ut.</p>
-        <img width = "250px" src="Home-Page/Screenshot 2023-03-26 at 10.50.21 PM.png">
+        <p background-color="white" text-align = "center">Input your birthday below!</p>
+        <form action="/action_page.php" id="bday-form">
+          <label for="birthday"color="white">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" required>
+          <label for="fname">First name:</label> <input type="text" id="fname" name="fname" required>
+          <label for="pronouns">Pronouns:</label>
+          <select id="pronouns" name="pronouns" required>
+            <option value="he">he/him</option>
+            <option value="she">she/her</option>
+            <option value="they">they/them</option>
+          </select>
+          <input type="submit">
+        </form>
+        <button id = "refresh">Is this not you?</button>
     </div>
 
     <div class="container2">
-        <p background-color="white">Nulla consectetur elit ut quis duis mollit nostrud reprehenderit. Fugiat consectetur et laborum velit elit cillum aliquip occaecat. Id veniam tempor cupidatat cupidatat ipsum. Ullamco id culpa et occaecat magna pariatur nulla occaecat ut non ipsum laborum. Est ullamco nisi excepteur mollit eiusmod eiusmod exercitation et quis incididunt anim anim.
-
-Occaecat eiusmod ad ad ex ad deserunt fugiat pariatur mollit velit ad do adipisicing ipsum. Nostrud minim in pariatur magna nostrud mollit aute proident. Dolore ad excepteur proident in id consectetur officia adipisicing occaecat sint.
-
-Aliquip ullamco cillum in ad commodo laborum sit officia sint commodo velit. Officia do adipisicing deserunt mollit. Officia amet pariatur ex sint elit dolore labore esse ad mollit Lorem nostrud.Cillum irure pariatur occaecat tempor nisi irure esse. Adipisicing pariatur laborum fugiat irure quis sunt adipisicing et eiusmod consectetur consectetur ea exercitation sit. Occaecat ullamco qui velit velit. Ut mollit mollit deserunt ipsum est duis reprehenderit ut.</p>
-        <img width = "750px"src="https://widgets.astronomyapi.com/star-chart/generated/1506881e20786f78d95fdbecaa714c129b3045b9f01193ed256db13f01f71937.png">
+        <p background-color="white" id = "p1sID">Bday: </p>
+        <p id = "data">Data: </p>
+        <p id = "p2sID">Info: </p>
+        <img width = "750px"src="" id = "cons">
     </div>
 
     <section>
@@ -53,7 +65,8 @@ Aliquip ullamco cillum in ad commodo laborum sit officia sint commodo velit. Off
         <span class = 'st'></span>
         <span class = 'st'></span>
     </section>
-    <iframe src="https://charliehoey.com/threejs-demos/our-galactic-neighborhood.html"></iframe>
+    <button onclick=" window.location.href= 'Moon-Page/moon.html';">Next Page</button>
+    <iframe src="https://charliehoey.com/threejs-demos/our-galactic-neighborhood.html" style="border:0px;"></iframe>
     <script src="Home-Page/script.js" defer></script>
   </body>
 </html>

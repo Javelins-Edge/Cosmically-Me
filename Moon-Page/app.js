@@ -56,6 +56,7 @@
 // console.log(calculate_age(9, 18, 2002));
 
 // var age, daysBetweenDates;
+
 function daysBetweenDates(d1, d2) {
   var diffDays, oneDay;
   oneDay = 24 * 60 * 60 * 1000;
@@ -67,17 +68,57 @@ function daysBetweenDates(d1, d2) {
 
 // setInterval(age, 500);
 let initialDistance =
-  (daysBetweenDates("Jun 28, 2000 12:04:00", new Date()) / 365) *
-  63241.077088066;
+  (daysBetweenDates(localStorage["bday"], new Date()) / 365) * 63241.077088066;
 // console.log(initialDistance);
 
-var count = initialDistance;
+let count = initialDistance;
 function counter() {
   document.getElementById("counter").innerHTML = count.toFixed(4);
   count = count + 0.0002004;
   setTimeout(counter, 100);
 }
 counter();
+
+let Moon = {
+  phases: [
+    "New Moon",
+    "Waxing Crescent Moon",
+    "Quarter Moon",
+    "Waxing Gibbous Moon",
+    "Full Moon",
+    "Waning Gibbous Moon",
+    "Last Quarter Moon",
+    "Waning Crescent Moon",
+  ],
+  phase: function (year, month, day) {
+    let c = (e = jd = b = 0);
+
+    if (month < 3) {
+      year--;
+      month += 12;
+    }
+
+    ++month;
+    c = 365.25 * year;
+    e = 30.6 * month;
+    jd = c + e + day - 694039.09; // jd is total days elapsed
+    jd /= 29.5305882; // divide by the moon cycle
+    b = parseInt(jd); // int(jd) -> b, take integer part of jd
+    jd -= b; // subtract integer part to leave fractional part of original jd
+    b = Math.round(jd * 8); // scale fraction from 0-8 and round
+
+    if (b >= 8) b = 0; // 0 and 8 are the same so turn 8 into 0
+    return { phase: b, name: Moon.phases[b] };
+  },
+};
+
+document.getElementById("bday").innerHTML += localStorage["bday"];
+document.getElementById("moon").style["background-image"] =
+  "url(" + localStorage["moon"] + ")";
+let spl = localStorage["bday"];
+spl = spl.split("-").map(Number);
+localStorage.setItem("phase", Moon.phase(spl[0], spl[2], spl[1]).name);
+document.getElementById("phase").innerHTML += localStorage["phase"];
 
 //one light second in AU is 0.0020040
 const track = document.getElementById("image-track");

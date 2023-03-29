@@ -5,7 +5,7 @@
     <title>Moon Animation</title>
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
+<!-- <script type="module" crossorigin="" src="./assets/index-8feff1b0.js"></script> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -21,10 +21,11 @@
         }
     </style>
   </head>
-  <body>
+  <body overflow-x = "hidden">
+    <button onclick=" window.location.href= '../index.html';">Next Page</button>
     <div class="container">
       <p class="letter letter-M">M</p>
-      <div class="moon">
+      <div id="moon">
         <div class="orbit">
           <p>O</p>
         </div>
@@ -37,9 +38,9 @@
         <div id="stars2"></div>
         <div id="stars3"></div>
         <div id="title">
-            <span>The moon the night of 09/18/2002</span>
+            <span id ="bday">The moon the night of </span>
             <br>
-            <span>It was a Waxing Gibbons</span>
+            <span id="phase">It was a </span>
         </div>
     </section>
     <!-- <div class="holder">
@@ -48,7 +49,7 @@
         </div> -->
       </div>
       <div id="clock">
-        <span id = "counter">379812491</span><span> AU</span>
+        <span id = "counter"></span><span> AU</span>
         <br>
         <span>This is a live distance clock since the day of your birth. <br>(1 AU = 93 Million Miles)</span>
     </div>
@@ -70,6 +71,7 @@
       <img class="image" src="https://imageio.forbes.com/blogs-images/startswithabang/files/2016/07/Laniakea-Supercluster-1401x716-1200x613.jpg?format=jpg&width=1200" draggable="false" />
       <img class="image" src="https://www.science.org/do/10.1126/article.30137/abs/sn-cosmicstructure.jpg" draggable="false" />
     </div>
-      <script src="app.js" defer></script>
+    <!-- <script type="module" src="phaseName.mjs"></script> -->
+      <script src="app.js"></script>
   </body>
 </html>

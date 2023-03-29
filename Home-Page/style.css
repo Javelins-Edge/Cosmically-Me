@@ -19,12 +19,13 @@
     height: 100vh;
     background-image: url(istockphoto-1211526766-612x612.jpg);
     background-attachment: fixed; 
+    overflow: hidden;
   }
   
   :root {  
-    --purple: rgb(123, 31, 162);
-    --violet: rgb(103, 58, 183);
-    --pink: rgb(244, 143, 177);
+    --orange: rgb(255, 166, 0);
+    --yellow: rgb(241, 255, 48);
+    --red: rgb(254, 58, 58);
   }
   
   @keyframes background-pan {
@@ -56,10 +57,11 @@
     animation: background-pan 3s linear infinite;
     background: linear-gradient(
       to right,
-      var(--purple),
-      var(--violet),
-      var(--pink),
-      var(--purple)
+      var(--red),
+      var(--orange),
+      var(--yellow),
+      var(--orange),
+      var(--red)
     );
     background-size: 200%;
     -webkit-background-clip: text;
