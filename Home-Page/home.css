@@ -38,6 +38,8 @@
       background-position: -200% center;
     }
   }
+
+  
   
 
 @keyframes travel {
@@ -254,6 +256,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
     animation: animate 3s linear infinite;
+    z-index: -1;
 }
 .st::before{
     content:'';
@@ -360,3 +363,24 @@ iframe {
     width:95%;
     height:840px;
 }
+
+nav {
+  /* animation: fade 1s linear 2s 1 normal forwards; */
+  background-color: rgba(255, 255, 255, 0.046);
+  backdrop-filter: blur(12px) saturate(160%) contrast(90%) brightness(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%) contrast(45%) brightness(140%);
+}
+
+/* #sNav {
+  background-color: rgba(255, 255, 255, 0.046);
+  backdrop-filter: blur(40px) saturate(160%) contrast(90%) brightness(140%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%) contrast(45%) brightness(140%);
+} */
+
+h1 {
+  font-size: 100px !important;
+}
+ #sand {
+  font-size: 20px;
+ }
+ 

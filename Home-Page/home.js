@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // document.getElementById("head").scrollIntoView();
   if (localStorage["bday"] !== undefined) {
+    document.querySelector("#sNav").style.opacity = "1";
     document.querySelector("#overflow").style.overflow = "visible";
     document.querySelector("#p1sID").innerText = localStorage["p1s"];
     document.querySelector("#p2sID").innerText = localStorage["p2s"];
@@ -199,6 +200,8 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
       "jsonp"
     );
     document.querySelector("#overflow").style.overflow = "visible";
+    document.querySelector("#sNav").style.animation =
+      "fade 1s linear 0s 1 normal forwards";
   }
 });
 

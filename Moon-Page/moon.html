@@ -3,14 +3,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moon Animation</title>
-    <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<!-- <script type="module" crossorigin="" src="./assets/index-8feff1b0.js"></script> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
-    <!-- Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="moon.css" />
     <link rel="stylesheet" href="../font/specimen_files/css/boxicons.min.css">
     <link rel="stylesheet" href="../font/specimen_files/css/style.css">
@@ -22,9 +20,29 @@
     </style>
   </head>
   <body overflow-x = "hidden">
-    <button onclick=" window.location.href= '../index.html';">Next Page</button>
+<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">COSMICALLY ME</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./moon.html">MOON</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../poems-page/poems.html">POEMS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../About Us/about.html">ABOUT US</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="container">
-      <p class="letter letter-M">M</p>
+      <p class="letter letter-M" >M</p>
       <div id="moon">
         <div class="orbit">
           <p>O</p>
@@ -32,61 +50,125 @@
       </div>
       <p class="letter letter-N">N</p>
     </div>
-
     <section class="wrapper">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
         <div id="title">
-            <span id ="bday">The moon the night of </span>
-            <br>
-            <span id="phase">It was a </span>
-        </div>
-    </section>
-    <!-- <div class="holder">
-        <div class="new-year">
-          
-        </div> -->
+          <span id ="bday">The moon the night of </span>
+          <br>
+          <span id="phase">It was a </span>
       </div>
+    </section>
       <div id="clock">
         <span id = "counter"></span><span> AU</span>
         <br>
         <span>This is a live distance clock since the day of your birth. <br>(1 AU = 93 Million Miles)</span>
     </div>
     <br>
+    <h2>
+      <span class="magic">
+          <span class="magic-text" style="user-select: none;">Your Cosmic Timeline</span>
+      </span>
+    </h2>
+    <br>
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
       <img class="image" src="https://cdn.theatlantic.com/thumbor/LF7dIjaHy0x7j7N50_UR7xD4nzg=/78x44:1842x1036/1600x900/media/img/nj/2014/5/8/how-nasa-photographs-the/8515999093-b99f85eb8f-o/original.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text" style="user-select: none;">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://c.tadst.com/gfx/1200x630/jupiter.jpg?1" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text" style="user-select: none;">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://starwalk.space/gallery/images/kuiper-belt/1140x641.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text" style="user-select: none;">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://i.ytimg.com/vi/wlJ1gLCeGu4/maxresdefault.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text" style="user-select: none;">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://images.pond5.com/oort-cloud-boundry-footage-081393551_iconl.jpeg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text" style="user-select: none;">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://www.mpg.de/11631079/original-1508158310.jpg?t=eyJ3aWR0aCI6ODQ4LCJmaWxlX2V4dGVuc2lvbiI6ImpwZyIsIm9ial9pZCI6MTE2MzEwNzl9--b5a5e1d37a09ea9d6d4a18654356470b66ff58e2" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://i.ytimg.com/vi/fkWrjrdT3Zg/maxresdefault.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://cdn.britannica.com/29/148329-050-269A9EFE/night-sky-Milky-Way-Galaxy.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://penntoday.upenn.edu/sites/default/files/2020-10/spiral%20collision.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text" style="user-select: none;">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://cdn.mos.cms.futurecdn.net/JmpFotFXcJwzNNReWMyxxQ.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://www.syfy.com/sites/syfy/files/milkomeda_1.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://i.natgeofe.com/n/96ea8fe8-5dc7-4b00-ade3-653d84513dbd/01-black-hole-a-consensus.jpg?w=374&h=218" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://www.sun.org/uploads/images/Virgocluster.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://imageio.forbes.com/blogs-images/startswithabang/files/2016/07/Laniakea-Supercluster-1401x716-1200x613.jpg?format=jpg&width=1200" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
       <img class="image" src="https://www.science.org/do/10.1126/article.30137/abs/sn-cosmicstructure.jpg" draggable="false" />
-      <div><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <div><h3>
+        <span class="magic">
+            <span class="magic-text">The Sun</span>
+        </span>
+      </h3><p id="pt">Adipisicing laborum reprehenderit est minim incididunt aliqua Lorem irure nostrud ea mollit enim eu.<br><a id="wiki" href="https://en.wikipedia.org/wiki/LP_658-2" style="text-align:right;" target="_blank">Click Me.</a></p></div>
+      <button onclick=" window.location.href= '../index.html';" class="btn btn-primary btn-rounded" style="left:auto;right:auto;background-color: rgb(123, 31, 162);border: 0px;">Next Page</button>
     </div>
+    
+
     <!-- <script type="module" src="phaseName.mjs"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
       <script src="moon.js"></script>
   </body>
 </html>

@@ -1,62 +1,3 @@
-/* Timelines could have been written in a better way, I am sorry if I wrote them in a hurry. :D */
-// (function () {
-//   var animation = {
-//     newYear: document.querySelector(".new-year"),
-//     get period() {
-//       return {
-//         year: 21369788659822,
-//       };
-//     },
-//     element: function (parent, type, className, html) {
-//       var element = document.createElement(type);
-//       element.className = className;
-//       if (typeof html !== "undefined") element.innerHTML = html;
-//       parent.appendChild(element);
-//       return element;
-//     },
-//     year: function (className) {
-//       var timeline = new TimelineMax();
-//       var year = animation.element(animation.newYear, "div", className);
-//       for (var i = 0; i <= String(animation.period.year).length - 1; i++) {
-//         var digit = animation.element(
-//           year,
-//           "div",
-//           "digit",
-//           String(animation.period.year).substr(i, 1)
-//         );
-//         digit.style.top = 0 - digit.clientHeight * 2 + "px";
-//         timeline.to(digit, 0.5, { top: 0, opacity: 1, ease: Bounce.easeOut });
-//       }
-//       return year;
-//     },
-//     animate: function () {
-//       var year1 = animation.year("year year1");
-//       var year2 = animation.year("year year2");
-//     },
-//   };
-//   animation.animate();
-// })();
-
-// function calculate_age(birth_month, birth_day, birth_year) {
-//   today_date = new Date();
-//   today_year = today_date.getFullYear();
-//   today_month = today_date.getMonth();
-//   today_day = today_date.getDate();
-//   age = today_year - birth_year;
-
-//   if (today_month < birth_month - 1) {
-//     age--;
-//   }
-//   if (birth_month - 1 == today_month && today_day < birth_day) {
-//     age--;
-//   }
-//   return age;
-// }
-
-// console.log(calculate_age(9, 18, 2002));
-
-// var age, daysBetweenDates;
-
 function daysBetweenDates(d1, d2) {
   var diffDays, oneDay;
   oneDay = 24 * 60 * 60 * 1000;
@@ -64,12 +5,8 @@ function daysBetweenDates(d1, d2) {
   return diffDays;
 }
 
-//63241.077088066 AU = 1 light year
-
-// setInterval(age, 500);
 let initialDistance =
   (daysBetweenDates(localStorage["bday"], new Date()) / 365) * 63241.077088066;
-// console.log(initialDistance);
 
 let count = initialDistance;
 function counter() {
@@ -112,7 +49,7 @@ let Moon = {
   },
 };
 let formatted = localStorage["bday"].split("-");
-formatted = formatted[2] + "/" + formatted[1] + "/" + formatted[0];
+formatted = formatted[1] + "/" + formatted[2] + "/" + formatted[0];
 document.getElementById("bday").innerHTML += formatted;
 document.getElementById("moon").style["background-image"] =
   "url(" + localStorage["moon"] + ")";
@@ -121,7 +58,6 @@ spl = spl.split("-").map(Number);
 localStorage.setItem("phase", Moon.phase(spl[0], spl[2], spl[1]).name);
 document.getElementById("phase").innerHTML += localStorage["phase"];
 
-//one light second in AU is 0.0020040
 const track = document.getElementById("image-track");
 
 const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
