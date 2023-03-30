@@ -86,7 +86,7 @@ function StarChart(id) {
         "Basic MWNjYTU5MDAtNWJjOC00YWViLWJmYmEtNWVjNjNkMDM3NzE3OmQ0MzRlYjc1MDZiOWU0MWNjNzkwODJlYTYyY2MzNWUyMDk0ZWViZTcwYjhlY2RmYzY1MTQyN2Y4YjRiOGZmNWU3ZWZjMTU5MDNhZmZmZWMyMTMwNWEwZmZjNGZiMjg4ZTdlMTMyZDg5MGJhZDk3MWMwMGYzNGE5MTE0OTIzZWMxYzEyMTRkZWY2ZDE3N2RkYmU1NzEzNzIzNmJiZDAyOTJhMzI4ODcyODcyZGQwNDUyYTQzOGRmNTFmM2IxNjJmZGM2ZThkNDE1YzNjZGYzODA1ZTM2MTI1YjYxNmM0MzYy",
     },
     body: JSON.stringify({
-      style: "default",
+      style: "navy",
       observer: {
         latitude: 33.775867,
         longitude: -84.39733,
@@ -99,9 +99,14 @@ function StarChart(id) {
     .then((response) => {
       console.log(response);
       localStorage.setItem("cons", response.data.imageUrl);
+      console.log(response);
       document.getElementById("cons").src = response.data.imageUrl;
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      document.getElementById("cons").src =
+        "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg";
+    });
 }
 
 let age;
@@ -144,8 +149,9 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
   );
   dak();
   function dak() {
-    let url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${disHash[dyear]}&formatversion=2&exsentences=10&exintro=1&explaintext=1&exsectionformat=plain`;
+    let url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${disHash[dyear]}&formatversion=2&exsentences=6&exintro=1&explaintext=1&exsectionformat=plain`;
     loadJSON(
+      //The only reason I'm using p5 is for this loadJSON() using JSONp parameter other wise I kept getting cross origin errors
       url,
       (data) => {
         localStorage.setItem("data", data.query.pages[0].extract);
@@ -178,9 +184,16 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
         constellation = constellation.substring(0, constellation.length - 2);
         asc = arr[1].split("|").join(" ");
         dec = arr[2].split("|").join(" ");
-        let p2s = `${name} your closest birth star is ${star}, in the constellation ${constellation}. The light from it was created around the day you were born, and has now arrived after traveling ${age.toFixed(
-          3
-        )} light years. How Exciting!`;
+        let p2s;
+        if (star === "Sun") {
+          p2s = `${name} your closest birth star is the ${star}, our star is not a part of any constellation. This is everybody's first birth star until about the age of 4. The light from it was created around the day you were born, and has now arrived after traveling ${age.toFixed(
+            3
+          )} light years. How Exciting!`;
+        } else {
+          p2s = `${name} your closest birth star is ${star}, in the constellation ${constellation}. The light from it was created around the day you were born, and has now arrived after traveling ${age.toFixed(
+            3
+          )} light years. How Exciting!`;
+        }
         document.querySelector("#p2sID").innerText = p2s;
         localStorage.setItem("p2s", p2s);
         let oId = String(idHash[constellation]).toLowerCase();
@@ -206,10 +219,12 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
 });
 
 let disHash = {
+  //In the future I might use a star database instead. I couldn't find an API with the sufficient data I needed. The one I could find was discontinued 6 months ago.
   0: "Sun",
   1: "Sun",
   2: "Sun",
   2: "Sun",
+  3: "Sun",
   4: "Barnard's_Star",
   6: "Barnard's_Star",
   7: "Luhman_16",
@@ -369,6 +384,7 @@ let disHash = {
 };
 
 let idHash = {
+  //same idea I rather use a data base, otherwise to get constellation data I needed to use regex from Wiki.
   Andromeda: "And",
   Antlia: "Ant",
   Apus: "Aps",

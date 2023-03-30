@@ -97,14 +97,14 @@ const handleOnMove = (e) => {
   }
 };
 
-window.onmousedown = (e) => handleOnDown(e);
+track.onmousedown = (e) => handleOnDown(e);
 
-window.ontouchstart = (e) => handleOnDown(e.touches[0]);
+track.ontouchstart = (e) => handleOnDown(e.touches[0]);
 
-window.onmouseup = (e) => handleOnUp(e);
+track.onmouseup = (e) => handleOnUp(e);
 
-window.ontouchend = (e) => handleOnUp(e.touches[0]);
+track.ontouchend = (e) => handleOnUp(e.touches[0]);
 
-window.onmousemove = (e) => handleOnMove(e);
+track.onmousemove = (e) => handleOnMove(e);
 
-window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+track.ontouchmove = (e) => handleOnMove(e.touches[0]);

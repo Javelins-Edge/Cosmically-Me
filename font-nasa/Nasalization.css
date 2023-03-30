@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Nasalization';
+    src: url('fonts/nasalization-rg.eot');
+    src: url('fonts/nasalization-rg.eot?#iefix') format('embedded-opentype'),
+         url('fonts/nasalization-rg.woff2') format('woff2'),
+         url('fonts/nasalization-rg.woff') format('woff'),
+         url('fonts/nasalization-rg.ttf')  format('truetype'),
+         url('fonts/nasalization-rg.svg#Nasalization') format('svg');
+}
