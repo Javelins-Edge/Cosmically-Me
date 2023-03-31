@@ -634,7 +634,7 @@ body {
   content: 'Planet'; } */
 
 .set-speed #sun dl.infos dd:after {
-  content: 'Click on a planet below to seek a question.'; }
+  content: 'Click on a question below to seek an answer.'; }
 
   .set-speed #sun dl.infos dd span:after {
     content: 'The Sun'; }
