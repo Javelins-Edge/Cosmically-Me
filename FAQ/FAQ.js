@@ -1,6 +1,6 @@
 $(window).load(function () {
   var body = $("body"),
-    universe = $("#universe"),
+    // universe = $("#universe"),
     solarsys = $("#solar-system");
 
   var init = function () {
@@ -14,19 +14,19 @@ $(window).load(function () {
       });
   };
 
-  var setView = function (view) {
-    universe.removeClass().addClass(view);
-  };
+  // var setView = function (view) {
+  //   universe.removeClass().addClass(view);
+  // };
 
-  $("#toggle-data").click(function (e) {
-    body.toggleClass("data-open data-close");
-    e.preventDefault();
-  });
+  // $("#toggle-data").click(function (e) {
+  //   body.toggleClass("data-open data-close");
+  //   e.preventDefault();
+  // });
 
-  $("#toggle-controls").click(function (e) {
-    body.toggleClass("controls-open controls-close");
-    e.preventDefault();
-  });
+  // $("#toggle-controls").click(function (e) {
+  //   body.toggleClass("controls-open controls-close");
+  //   e.preventDefault();
+  // });
 
   $("#data a").click(function (e) {
     var ref = $(this).attr("class");
@@ -54,3 +54,7 @@ $(window).load(function () {
 
   init();
 });
+function yes() {
+  console.log("yes");
+}
+document.querySelector("#1").addEventListener("click", yes());
