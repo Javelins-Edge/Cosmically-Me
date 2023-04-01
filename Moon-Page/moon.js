@@ -60,15 +60,21 @@ document.getElementById("phase").innerHTML += localStorage["phase"];
 
 const track = document.getElementById("image-track");
 
-const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+const handleOnDown = (e) => {
+  track.dataset.mouseDownAt = e.clientX;
+};
 
 const handleOnUp = () => {
   track.dataset.mouseDownAt = "0";
+  if (track.dataset.percentage < -92) {
+    track.dataset.percentage = -91.3194;
+  }
   track.dataset.prevPercentage = track.dataset.percentage;
 };
 
 const handleOnMove = (e) => {
   if (track.dataset.mouseDownAt === "0") return;
+  console.log(track.dataset.percentage);
 
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
     maxDelta = window.innerWidth / 2;
@@ -77,6 +83,9 @@ const handleOnMove = (e) => {
     nextPercentageUnconstrained =
       parseFloat(track.dataset.prevPercentage) + percentage,
     nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+  if (nextPercentage < -92) {
+    nextPercentage = -91.3194;
+  }
 
   track.dataset.percentage = nextPercentage;
 
