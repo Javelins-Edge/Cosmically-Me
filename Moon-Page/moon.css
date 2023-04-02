@@ -102,8 +102,6 @@
   html {
     height: 100%;
     cursor: url('../cursors/ateez_arrow_jh_g.png'), default;
-    /* overflow: hidden; */
-    /* background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%); */
 }
 :root {  
   --purple: rgb(123, 31, 162);
@@ -120,16 +118,22 @@
     background-position: -200% center;
   }
 }
+ #wiki {
+  text-align:right;
+  cursor: url('../cursors/ateez_move_g.png'), pointer;
+  color: rgb(153, 62, 192);
+ }
 
+ #wiki:hover {
+  color: rgb(203, 83, 255);
+ }
 
 @keyframes travel {
 from {
 top: 40%;
 }
 to {
-top: 10%;
-
-}
+top: 10%;}
 }
 
 
@@ -161,7 +165,6 @@ top: 10%;
   right: 0;
   color: wheat;
   text-align: center;
-  /* font-family: Lato; */
   font-weight: 300;
   font-size: 40px;
   letter-spacing: 10px;
@@ -750,7 +753,7 @@ top: 10%;
   gap: 4vmin;
   position: absolute;
   left: 10%;
-  top: 150%;
+  top: 160%;
   transform: translate(0%, -50%); 
 }
 
@@ -818,7 +821,6 @@ h2 {
 }
 
 h2 > .magic {
-  /* display: inline-block; */
   position: relative;
   top: 80vh;
 }
@@ -852,3 +854,15 @@ h2 > .magic > .magic-text {
   -webkit-text-fill-color: transparent !important; 
   font-weight: 900 !important;
 }
+
+span, br{
+  user-select: none;
+}
+
+#bNext {
+  left: 40%;
+  background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
+  border: 0px; 
+  cursor: url('../cursors/ateez_move_g.png'), pointer;
+
+ }

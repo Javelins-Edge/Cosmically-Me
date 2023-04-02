@@ -218,10 +218,12 @@ html {
   @keyframes fade {
     from {
       opacity: 0;
+      visibility: hidden;
     }
     
     to {
       opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -230,6 +232,7 @@ html {
     margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
+    visibility: hidden;
     width: 50rem;
     height: 30rem;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
@@ -379,17 +382,16 @@ html {
 iframe {
     margin-left:3rem;
     margin-right:auto;
-    margin-top: 40%;
-    width:50%;
+    margin-top: 32%;
     width:95%;
     height:840px;
 }
 
 nav {
-  /* animation: fade 1s linear 2s 1 normal forwards; */
   background-color: rgba(255, 255, 255, 0.046);
   backdrop-filter: blur(9px) saturate(160%) contrast(90%) brightness(140%);
   -webkit-backdrop-filter: blur(9px) saturate(160%) contrast(45%) brightness(140%);
+  visibility: hidden;
 }
 
 h1 {
@@ -402,7 +404,19 @@ h1 {
 
  .pFont {
   font-family: 'Nasalization';
-  /* font-family: 'Abel', sans-serif; */
   font-size: 20px;
   font-weight: 600;
+ }
+
+ #bNext {
+  left: 40%;
+  background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
+  border: 0px; 
+  cursor: url('../cursors/ateez_move_g.png'), pointer;
+
+ }
+
+ main {
+  background-color: black;
+  margin-top: -106.5px;
  }

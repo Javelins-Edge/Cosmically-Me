@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // document.getElementById("head").scrollIntoView();
   if (localStorage["bday"] !== undefined) {
     document.querySelector("#sNav").style.opacity = "1";
+    document.querySelector("#sNav").style.visibility = "visible";
     document.querySelector("#overflow").style.overflow = "visible";
     document.querySelector("#p1sID").innerText = localStorage["p1s"];
     document.querySelector("#p2sID").innerText = localStorage["p2s"];
@@ -12,15 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// window.onload = function () {
-//   document.getElementById("head").scrollIntoView();
-//   window.scrollTo(0, 0, "instant");
-// };
+window.onload = function () {
+  window.scrollTo(0, 0, "instant");
+};
 
 document.getElementById("refresh").addEventListener("click", (e) => {
-  // document.getElementById("head").scrollIntoView();
   e.preventDefault();
-  window.scrollTo(0, 0, "instant");
   localStorage.clear();
   location.reload();
 });
@@ -86,7 +83,7 @@ function StarChart(id) {
         "Basic MWNjYTU5MDAtNWJjOC00YWViLWJmYmEtNWVjNjNkMDM3NzE3OmQ0MzRlYjc1MDZiOWU0MWNjNzkwODJlYTYyY2MzNWUyMDk0ZWViZTcwYjhlY2RmYzY1MTQyN2Y4YjRiOGZmNWU3ZWZjMTU5MDNhZmZmZWMyMTMwNWEwZmZjNGZiMjg4ZTdlMTMyZDg5MGJhZDk3MWMwMGYzNGE5MTE0OTIzZWMxYzEyMTRkZWY2ZDE3N2RkYmU1NzEzNzIzNmJiZDAyOTJhMzI4ODcyODcyZGQwNDUyYTQzOGRmNTFmM2IxNjJmZGM2ZThkNDE1YzNjZGYzODA1ZTM2MTI1YjYxNmM0MzYy",
     },
     body: JSON.stringify({
-      style: "navy",
+      style: "default",
       observer: {
         latitude: 33.775867,
         longitude: -84.39733,

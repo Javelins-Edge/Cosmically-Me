@@ -4,14 +4,16 @@ function daysBetweenDates(d1, d2) {
   diffDays = (d2 - Date.parse(d1)) / oneDay;
   return diffDays;
 }
+// * 63241.077088066
+let initialDistance = daysBetweenDates(localStorage["bday"], new Date()) / 365;
 
-let initialDistance =
-  (daysBetweenDates(localStorage["bday"], new Date()) / 365) * 63241.077088066;
-
+//0.0000000317057705
 let count = initialDistance;
+console.log(count);
 function counter() {
-  document.getElementById("counter").innerHTML = count.toFixed(4);
-  count = count + 0.0002004;
+  document.getElementById("counter").innerHTML = count.toFixed(10);
+  // count = count + 0.0002004; switchin from AU to light years;
+  count = count + 0.00000000317057705;
   setTimeout(counter, 100);
 }
 counter();
@@ -58,6 +60,68 @@ spl = spl.split("-").map(Number);
 localStorage.setItem("phase", Moon.phase(spl[0], spl[2], spl[1]).name);
 document.getElementById("phase").innerHTML += localStorage["phase"];
 
+let t1 = document.getElementById("1");
+let t2 = document.getElementById("2");
+let t3 = document.getElementById("3");
+let t4 = document.getElementById("4");
+let t5 = document.getElementById("5");
+let t6 = document.getElementById("6");
+let t7 = document.getElementById("7");
+let t8 = document.getElementById("8");
+let t9 = document.getElementById("9");
+let t10 = document.getElementById("10");
+let t11 = document.getElementById("11");
+let t12 = document.getElementById("12");
+let t13 = document.getElementById("13");
+let t14 = document.getElementById("14");
+let t15 = document.getElementById("15");
+let t16 = document.getElementById("16");
+let t17 = document.getElementById("17");
+let t18 = document.getElementById("18");
+let t19 = document.getElementById("19");
+let t20 = document.getElementById("20");
+
+let hash = {
+  0.00002: t1,
+  0.0001: t2,
+  0.003: t3,
+  2: t4,
+  4.3: t5,
+  10: t6,
+  20: t7,
+  30: t8,
+  50: t9,
+  100: t10,
+  200: t11,
+  444: t12,
+  1344: t13,
+  27700: t14,
+  158200: t15,
+  3000000: t16,
+  53000000: t17,
+  147000000: t18,
+  1000000000: t19,
+  9000000000: t20,
+};
+
+function verbTense(age) {
+  for (let distance in hash) {
+    let text = hash[distance].innerHTML;
+    if (Number(age) >= Number(distance)) {
+      text = text.replace("${you will have/you}", "you");
+    } else {
+      text = text.replace("${you will have/you}", "<i>you will have<i>");
+    }
+    hash[distance].innerHTML = text;
+  }
+}
+
+verbTense(localStorage["age"]);
+
+let nam = document.getElementById("nam");
+
+nam.innerText = nam.innerText.replace("${Name}", localStorage["name"]);
+
 const track = document.getElementById("image-track");
 
 const handleOnDown = (e) => {
@@ -74,7 +138,6 @@ const handleOnUp = () => {
 
 const handleOnMove = (e) => {
   if (track.dataset.mouseDownAt === "0") return;
-  console.log(track.dataset.percentage);
 
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
     maxDelta = window.innerWidth / 2;
