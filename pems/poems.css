@@ -1,0 +1,270 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    cursor: url('../cursors/ateez_arrow_jh_g.png'), default;
+}
+
+body{
+    background: black;
+    background-image: url(../Home-Page/istockphoto-1211526766-612x612.jpg);
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'SpaceX';
+    src: url('../font/fonts/SpaceX.eot');
+    src: url('../font/fonts/SpaceX.eot?#iefix') format('embedded-opentype'),
+         url('../font/fonts/SpaceX.woff2') format('woff2'),
+         url('../font/fonts/SpaceX.woff') format('woff'),
+         url('../font/fonts/SpaceX.ttf')  format('truetype'),
+         url('../font/fonts/SpaceX.svg#SpaceX') format('svg');
+}
+
+@font-face {
+  font-family: 'Nasalization';
+  src: url('../font-nasa/fonts/nasalization-rg.eot');
+  src: url('../font-nasa/fonts/nasalization-rg.eot?#iefix') format('embedded-opentype'),
+       url('../font-nasa/fonts/nasalization-rg.woff2') format('woff2'),
+       url('../font-nasa/fonts/nasalization-rg.woff') format('woff'),
+       url('../font-nasa/fonts/nasalization-rg.ttf')  format('truetype'),
+       url('../font-nasa/fonts/nasalization-rg.svg#Nasalization') format('svg');
+}
+
+#sun-div{
+    position: absolute;
+    left: -32vh;
+    top: 10vh; 
+    bottom: 0; 
+    height: 50rem;
+    width: 50rem;
+    border-radius: 50%;
+    background-image: linear-gradient(orange, yellow);
+    box-shadow: 0 0 0 10px #ffbe0080, 0 0 0 20px #ffbe0040, 0 0 0 30px #ffbe0020, 0 0 0 40px #ffbe0010, 0 0 0 60px #ffbe0000;
+    animation: sunrise 2s infinite linear forwards, rays 2s 2s infinite linear;
+}
+#earth-div{
+    position: absolute;
+    right: -32vh;
+    top: 10vh;
+    height: 50rem;
+    width: 50rem;
+    border-radius: 50%;
+    background-image: linear-gradient(rgb(0, 0, 255), green);
+    box-shadow: 0 0 0 10px #005ae480, 0 0 0 20px #005ae440, 0 0 0 30px #005ae420, 0 0 0 40px #005ae410, 0 0 0 60px #005ae400;
+    animation: sunrise-2 2s infinite linear forwards, rays-2 2s 2s infinite linear;
+}
+#earth-poem{
+    position: relative;
+    color: white;
+    width: 370px;
+    top: 7%;
+    left: 12%;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    text-align: right;
+}
+#sun-poem{
+    color:black;
+    margin-left:338px;
+    margin-top: 95px;
+    letter-spacing: -1.4px;
+    font-size: 19px;
+}
+
+.ahref {
+    background-image: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important; 
+    font-weight: 900 !important;
+  }
+  
+  nav {
+    background-color: rgba(255, 255, 255, 0.046);
+    backdrop-filter: blur(9px) saturate(160%) contrast(90%) brightness(140%);
+    -webkit-backdrop-filter: blur(9px) saturate(160%) contrast(45%) brightness(140%);
+  }
+
+  .nav-link:hover {
+    color: wheat !important;
+  }
+
+  #bNext {
+    left: 40%;
+    background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
+    border: 0px; 
+    cursor: url('../cursors/ateez_move_g.png'), pointer;
+   }
+
+   p {
+
+    font-size:x-large;
+
+   }
+
+ @keyframes sunrise  {
+    0% {
+        box-shadow: none;    
+    }
+}
+@keyframes sunrise-2  {
+    0% {
+        box-shadow: none;    
+    }
+}
+@keyframes rays {
+    0% {
+        box-shadow:    
+        0 0 0 0 #ffbe0080,
+        0 0 0 20px #ffbe0080,
+        0 0 0 40px #ffbe0040,
+        0 0 0 60px #ffbe0020,
+        0 0 0 80px #ffbe0010, 
+        0 0 40px 100px #ffbe0010;
+    }
+    100% {
+        box-shadow:    
+        0 0 0 20px #ffbe0080,
+        0 0 0 40px #ffbe0040,
+        0 0 0 60px #ffbe0020,
+        0 0 0 80px #ffbe0010,
+        0 0 0 100px #ffbe0000, 
+        0 0 40px 100px #ffbe0010;
+    }
+}
+@keyframes rays-2 {
+    0% {
+        box-shadow:    
+        0 0 0 0 #005ae480,
+        0 0 0 20px #005ae480,
+        0 0 0 40px #005ae440,
+        0 0 0 60px #005ae420,
+        0 0 0 80px #005ae410,
+        0 0 40px 100px #005ae410;
+    }
+    100% {
+        box-shadow:    
+        0 0 0 20px #005ae480,
+        0 0 0 40px #005ae440,
+        0 0 0 60px #005ae420,
+        0 0 0 80px #005ae410,
+        0 0 0 100px #005ae400, 
+        0 0 40px 100px #005ae410;
+    }
+}
+audio{
+    margin-left: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#freq.animateHue, body.animateHue {
+    animation-name: hue;
+    animation-duration: 500s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name: hue;
+    -webkit-animation-duration: 500s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: infinite;
+}
+#title, #artist, #album {
+    position: relative;
+    text-align: center;
+    top: 16vh;
+    width: 100%;
+    z-index: 999;
+    font-weight: 100;
+    /* font-family: "Roboto", sans-serif; */
+    /*font-size: 100px;*/
+    color: #fff;
+    visibility: hidden;
+    letter-spacing: -.05em;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+	margin-bottom: 15px;
+}
+#song_info_wrapper {
+	position: absolute;
+	width: 100%;
+	text-align: center; 
+}
+
+#title {
+	font-size: 10vw;
+}
+
+#artist {
+    font-size: 3vw;
+}
+#album {
+    font-size: 3vw;
+	/*font-size: 40px;*/
+	margin-bottom: 0;
+}
+
+input, button, #loading {
+	position: absolute;
+	top: 10px;
+	left: 5px;
+    display: block;
+    z-index: 999;
+    
+}
+
+#playSampleButton {
+	top: 120px;
+    cursor: url('../cursors/ateez_move_g.png'), pointer;
+    background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
+    border: 0px;
+    color: white;
+}
+
+.e1 {
+    left: 95%;
+}
+
+.s1 {
+
+}
+
+#loading {
+	display: inline-block;
+	top: 44px; 
+	left: 110px;
+	/* font-family: "Roboto", sans-serif;  */
+	font-size: 12px;
+}
+
+
+@media screen and (min-width: 1000px) {
+	#title {
+		font-size: 100px;
+	}
+
+	#artist, #album {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#artist, #album {
+		font-weight: 300;
+		font-size: 4vw;
+	}
+}
+
+@media screen and (max-width: 436px) {
+	#artist, #album {
+		font-weight: 300;
+		font-size: 4.5vw;
+	}
+	
+	#title {
+		
+	}
+}
