@@ -55,11 +55,72 @@ body {
     cursor: url('../cursors/ateez_move_g.png'), pointer;
   }
 
+  a > img {
+    border-radius: 0px;
+  }
+
   .ahref {
     background-image: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183)) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important; 
     font-weight: 900 !important;
+  }
+  :root {  
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+  }
+  
+  @keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
+
+  
+  
+
+@keyframes travel {
+  from {
+  top: 40%;
+  }
+  to {
+  top: 10%;
+  
+}
+}
+  h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+  }
+  
+  h2 > .magic {
+    display: inline-block;
+    position: relative;
+  }
+
+  h2 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
   }
 
   @keyframes fade {
@@ -112,6 +173,33 @@ body {
 
   .hide > p {
     color: white;
+  }
+
+  .nav-link:hover {
+    color: wheat !important;
+  }
+
+  p, figcaption > p {
+    font-size: 20px;
+    font-weight: 600;
+    text-align:center; 
+    padding: 10px;
+    color: white;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: black;
+  }
+
+  #wiki {
+    color: rgb(153, 62, 192) !important;
+   }
+  
+   #wiki:hover {
+    color: rgb(203, 83, 255) !important;
+   }
+
+  img {
+    padding: 5px;
+    border-radius: 40px;
   }
 
 #galaxy {

@@ -2,6 +2,8 @@ $(window).load(function () {
   var body = $("body");
   var solarsys = $("#solar-system");
 
+  // $(".wikiT").href = localStorage["wiki"];
+
   var init = function () {
     body
       .removeClass("view-2D opening")

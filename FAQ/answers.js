@@ -17,6 +17,8 @@ let b7 = document.querySelector("#b7");
 let b8 = document.querySelector("#b8");
 let b9 = document.querySelector("#b9");
 
+document.querySelector(".wikiT").href = localStorage["wiki"];
+
 a1.addEventListener("click", () => {
   hideAll(0);
 });
