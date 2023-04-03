@@ -130,7 +130,7 @@ document.querySelector("#bday-form").addEventListener("submit", (e) => {
   let p1s = `Wow, you were born on ${days}, congratulations!`;
   localStorage.setItem("p1s", p1s);
   document.querySelector("#p1sID").innerHTML = p1s;
-  age = daysBetweenDates(bday, new Date()) / 365;
+  age = daysBetweenDates(bday, new Date()) / 365.2422;
   localStorage.setItem("age", age);
   star = bdStar(age);
   document.querySelector(
