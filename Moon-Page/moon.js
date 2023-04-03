@@ -5,7 +5,7 @@ function daysBetweenDates(d1, d2) {
   return diffDays;
 }
 // * 63241.077088066
-let initialDistance = daysBetweenDates(localStorage["bday"], new Date()) / 365;
+let initialDistance = daysBetweenDates(localStorage["bday"], new Date()) / 365.2422;
 
 //0.0000000317057705
 let count = initialDistance;
