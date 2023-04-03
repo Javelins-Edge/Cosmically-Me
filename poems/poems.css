@@ -93,7 +93,9 @@ body{
   }
 
   #bNext {
-    left: 40%;
+    left: 0%;
+    top:81vh;
+    width: 100%;
     background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
     border: 0px; 
     cursor: url('../cursors/ateez_move_g.png'), pointer;
@@ -216,20 +218,38 @@ input, button, #loading {
     
 }
 
-#playSampleButton {
+/* #playSampleButton {
 	top: 120px;
     cursor: url('../cursors/ateez_move_g.png'), pointer;
     background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
     border: 0px;
     color: white;
+} */
+
+#earth1 {
+    visibility: visible;
+}
+
+#star1 {
+    visibility: visible;
 }
 
 .e1 {
-    left: 95%;
+    left: 55%;
+    top: 120px;
+    cursor: url('../cursors/ateez_move_g.png'), pointer !important;
+    background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
+    border: 0px;
+    color: white;
 }
 
 .s1 {
-
+    left: 45%;
+    top: 120px;
+    cursor: url('../cursors/ateez_move_g.png'), pointer !important;
+    background: linear-gradient(0.25turn, rgb(123, 31, 162),rgb(244, 143, 177),rgb(103, 58, 183));
+    border: 0px;
+    color: white;
 }
 
 #loading {

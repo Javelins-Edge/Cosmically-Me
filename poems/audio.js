@@ -101,8 +101,16 @@ function handleFiles(files) {
   request.send();
 }
 
+function dS() {
+  let s = document.getElementById("star1");
+  s.style.visibility = "hidden";
+  setTimeout(() => {
+    s.style.visibility = "visible";
+  }, 58000);
+}
+
 function playSample() {
-  window.reload();
+  dS();
   fileChosen = true;
   setupAudioNodes();
 
@@ -138,7 +146,16 @@ function playSample() {
   request.send();
 }
 
+function dE() {
+  let e = document.getElementById("earth1");
+  e.style.visibility = "hidden";
+  setTimeout(() => {
+    e.style.visibility = "visible";
+  }, 50000);
+}
+
 function playStar() {
+  dE();
   fileChosen = true;
   setupAudioNodes();
 
