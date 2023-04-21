@@ -23,7 +23,7 @@ This will be a timeline that was generated specfically for you.
 
 # Poems
 
-![Poems Page](https://i.imgur.com/7xcGFVz.png
+![Poems Page](https://i.imgur.com/7xcGFVz.png)
 
 Hear these two poems that tell your cosmic story from two different perspectives, one from your birth star and the other from Earth. 
 
